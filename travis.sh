@@ -13,10 +13,8 @@ then
 		-Dsonar.github.pullRequest=${TRAVIS_PULL_REQUEST}
 elif [ "${TRAVIS_BRANCH}" = "master" ]
 then
-	echo "Running build and SonarQube analysis"
-	mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar \
-		-Dsonar.host.url=${SONAR_HOST_URL} \
-		-Dsonar.login=${SONAR_TOKEN}
+	echo "Running build, no analysis for branch '${TRAVIS_BRANCH}'"
+	mvn clean verify
 else
 	echo "Running build, no analysis for branch '${TRAVIS_BRANCH}'"
 	mvn clean verify
