@@ -52,7 +52,7 @@ public final class BadgesWebService implements WebService {
 
     @Override
     public void define(final Context context) {
-        final NewController controller = context.createController("api/badges");
+        final NewController controller = context.createController("images/badges");
         controller.setDescription("SVG Badges generation web service");
         this.qualityGateBadgeAction.createOn(controller);
         this.measureBadgeAction.createOn(controller);
